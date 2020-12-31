@@ -1,0 +1,24 @@
+<ion-header>
+	<ion-toolbar>
+		<ion-buttons slot="start">
+			<ion-back-button defaultHref="/"></ion-back-button>
+		</ion-buttons>
+		<ion-title>staff</ion-title>
+	</ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+	<app-search
+		(searchCompleted)="searchResult($event)"
+		(searchStarted)="handleSearch()"
+		[items]="copyOfStaff"
+		[filteredProperty]="'item'"
+	></app-search>
+	<ion-list *ngIf="allStaff">
+		<div *ngFor="let staff of allStaff">
+			<ion-item>
+				<ion-label>{{staff}}</ion-label>
+			</ion-item>
+		</div>
+	</ion-list>
+</ion-content>

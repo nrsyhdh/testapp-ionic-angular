@@ -1,0 +1,19 @@
+<ion-header>
+	<ion-toolbar>
+		<ion-buttons slot="start">
+			<ion-back-button defaultHref="/users"></ion-back-button>
+		</ion-buttons>
+		<ion-title>create</ion-title>
+	</ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+	<ion-item>
+		<ion-label position="floating">Name</ion-label>
+		<ion-input type="text" [(ngModel)]="newUser"></ion-input>
+	</ion-item>
+	<br />
+	<div class="ion-padding">
+		<ion-button (click)="setUser(newUser)" expand="block"> Create </ion-button>
+	</div>
+</ion-content>
